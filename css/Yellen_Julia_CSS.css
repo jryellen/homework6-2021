@@ -133,15 +133,9 @@ body{
     animation-name: logo_ani;
     animation-duration: 5s;
   }
-  @media screen and (min-width: 850px){
-    .card_big{
-        -webkit-transform: scaleY(1.1);
-        transform: scaleY(1.1);
-        z-index: -99;
-  }
-    header:first-of-type{
+ @media screen and (min-width: 850px){
+    header{
         display: flex;
-        flex-grow: 1;
         flex-direction: row;
         top: 0;
         position: sticky;
@@ -149,18 +143,24 @@ body{
     }
     .card{
       width:250px;
-      align-items:space-evenly;
+      justify-content: space-evenly;
+      flex-basis: auto;
+      position: static;
     }
     .pricing{
-        flex-direction: row;
-        align-items:center;
-        justify-content: center;
+      position: static;
+      flex-direction: row;
+      align-items:center;
+      justify-content: center;
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
     .card header{
+        flex-basis: 250px;
+        width: 250px;
         position:static;
         justify-content: center;
-        flex-basis: 250px;
-        width:250px;
     }
   }
   @media (prefers-reduced-motion) {
@@ -169,40 +169,47 @@ body{
       }
   }
   @media print{
-      body{
-          background-image: none;
-      }
-      .card > ul li:first-child::before{
-        content: "👍";
-      }
-      .card > ul li:last-child::before{
-        content: "👍";
-      }
-      .card > ul li:nth-child(2)::after{
-        content: "👍";
-      }
-      #gallery{
-          display: none
-      }
-      .gallery{
-          display: none;
-      }
-      .card{
-          border: 2px solid #45ADDD;
-          flex-basis: 250px;
-      }
-      .card{
-        flex-basis: 250px;
+    body{
+      background-image: none;
+    }
+    .nav_links{
+      display: flex;
+      align-self: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    .card > ul li:first-child::before{
+      content: "👍";
+    }
+    .card > ul li:last-child::before{
+      content: "👍";
+    }
+    .card > ul li:nth-child(2)::after{
+      content: "👍";
+    }
+    #gallery{
+        display: none
+    }
+    .gallery{
+        display: none;
+    }
+    .card{
+        border: 2px solid #45ADDD;
         width: 250px;
-        flex-direction: row;
-        align-items:space-evenly;
-    }
-    .pricing{
-        flex-direction: row;
-        align-items:center;
-    }
-    .card header{
-        position:static;
-        justify-content: center;
-    }
+        flex-basis: 250px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+  }
+  .pricing{
+      flex-direction: row;
+      align-items:center;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+  }
+  .card header{
+    width: 250px;
+    position:static;
+    justify-content: center;
+  }
   }
