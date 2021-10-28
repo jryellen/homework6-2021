@@ -115,7 +115,8 @@ body{
         flex-basis: 0;
         width: 250px;
         position:static;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
   }
   @media (prefers-reduced-motion) {
