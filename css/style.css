@@ -99,6 +99,9 @@ body{
         position: sticky;
         justify-content: space-between;
     }
+    .nav_links{
+      flex-direction: row;
+    }
     .card{
       width:250px;
       justify-content: space-evenly;
